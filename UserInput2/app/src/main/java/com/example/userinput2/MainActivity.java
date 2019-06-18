@@ -12,22 +12,11 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
         // PASTE CODE YOU WANT TO TEST
 
-        int raspberryPrice = 5;
-        display1("1 box: $" + raspberryPrice);
-        raspberryPrice = 10;
-        display2("2 boxes: $" + (raspberryPrice));
-        display3("3 boxes: $" + (raspberryPrice * 3));
-        display1("This is Box 1.");
-        display2("And this is Box 2.");
-        display3("And look! Box 3!");
-        int weekday = 5;
-        int weekend = 9;
-        int optimalHours = 7 * 8;
-
-        int actualHours = weekday;
-        actualHours = actualHours + weekend * 2;
-        int solution = optimalHours - actualHours;
-        display(solution);
+        String first="Rahul";
+        String second="M";
+        String contactInfo=first + " " + second;
+        contactInfo= "<" + first + "." + second + "@justjava.com>";
+        display(contactInfo);
 
     }
 

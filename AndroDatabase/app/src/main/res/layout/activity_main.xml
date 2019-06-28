@@ -1,10 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:orientation="vertical"
     tools:context=".MainActivity">
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
 
 
@@ -15,6 +19,19 @@
         android:text="Name"
         tools:layout_editor_absoluteX="30dp"
         tools:layout_editor_absoluteY="44dp" />
+    <EditText
+        android:id="@+id/editText"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        tools:layout_editor_absoluteX="132dp"
+        tools:layout_editor_absoluteY="27dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/LargeText2"
@@ -23,6 +40,19 @@
         tools:layout_editor_absoluteX="30dp"
         tools:layout_editor_absoluteY="99dp"
         android:layout_width="wrap_content" />
+    <EditText
+        android:id="@+id/editText2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:ems="10"
+        android:inputType="textPersonName"
+        android:text=""
+        tools:layout_editor_absoluteX="132dp"
+        tools:layout_editor_absoluteY="86dp" />
+    </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/LargeText3"
@@ -33,34 +63,15 @@
         tools:layout_editor_absoluteY="171dp" />
 
     <EditText
-        android:id="@+id/editText"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        tools:layout_editor_absoluteX="132dp"
-        tools:layout_editor_absoluteY="27dp" />
-
-    <EditText
-        android:id="@+id/editText2"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:ems="10"
-        android:inputType="textPersonName"
-        android:text="Name"
-        tools:layout_editor_absoluteX="132dp"
-        tools:layout_editor_absoluteY="86dp" />
-
-    <EditText
         android:id="@+id/editText3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:ems="10"
         android:inputType="textPersonName"
-        android:text="Name"
+        android:text=""
         tools:layout_editor_absoluteX="132dp"
         tools:layout_editor_absoluteY="153dp" />
+    </LinearLayout>
 
     <Button
         android:id="@+id/button_add"
@@ -70,4 +81,4 @@
         tools:layout_editor_absoluteX="161dp"
         tools:layout_editor_absoluteY="261dp" />
 
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>

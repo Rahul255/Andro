@@ -12,9 +12,10 @@ import android.widget.Toast;
 
 public class MainActivity extends AppCompatActivity {
     DatabaseHelper myDb;
-    EditText editName,editSurname,editMarks;
+    EditText editName,editSurname,editMarks, editTextId;
     Button btnAddData;
     Button btnviewAll;
+    Button btnviewUpdate;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -25,10 +26,31 @@ public class MainActivity extends AppCompatActivity {
         editName=findViewById(R.id.editText);
         editSurname=findViewById(R.id.editText2);
         editMarks=findViewById(R.id.editText3);
+        editTextId=findViewById(R.id.editTextId);
         btnAddData=findViewById(R.id.button_add);
         btnviewAll=findViewById(R.id.button_view);
+        btnviewUpdate=findViewById(R.id.button_update);
         AddData();
         viewAll();
+        UpdateData();
+    }
+
+    public  void UpdateData(){
+        btnviewUpdate.setOnClickListener(
+                new View.OnClickListener() {
+                    @Override
+                    public void onClick(View v) {
+                        boolean isUpdate = myDb.updateData(editTextId.getText().toString(),
+                                editName.getText().toString(),editSurname.getText().toString(),
+                                editMarks.getText().toString());
+                        if(isUpdate == true)
+                            Toast.makeText(MainActivity.this,"Data Updated",Toast.LENGTH_LONG).show();
+                        else
+                            Toast.makeText(MainActivity.this,"Data not Updated",Toast.LENGTH_LONG).show();
+
+                    }
+                }
+        );
     }
     public void AddData() {
         btnAddData.setOnClickListener(
@@ -38,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
                         boolean isInserted = myDb.insertData(editName.getText().toString(),
                                 editSurname.getText().toString(),
                                 editMarks.getText().toString());
-                        if(isInserted = true)
+                        if(isInserted == true)
                             Toast.makeText(MainActivity.this,"Data Inserted",Toast.LENGTH_LONG).show();
                         else
                             Toast.makeText(MainActivity.this,"Data not Inserted",Toast.LENGTH_LONG).show();

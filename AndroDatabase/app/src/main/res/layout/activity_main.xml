@@ -72,6 +72,9 @@
         tools:layout_editor_absoluteX="132dp"
         tools:layout_editor_absoluteY="153dp" />
     </LinearLayout>
+    <LinearLayout
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content">
 
     <Button
         android:id="@+id/button_add"
@@ -80,5 +83,14 @@
         android:text="Add Data"
         tools:layout_editor_absoluteX="161dp"
         tools:layout_editor_absoluteY="261dp" />
+
+    <Button
+        android:id="@+id/button_view"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="View All"
+        tools:layout_editor_absoluteX="161dp"
+        tools:layout_editor_absoluteY="261dp" />
+    </LinearLayout>
 
 </LinearLayout>

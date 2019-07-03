@@ -4,6 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".newAccount">
+    tools:context=".Main2Activity_newAccount">
 
 </androidx.constraintlayout.widget.ConstraintLayout>

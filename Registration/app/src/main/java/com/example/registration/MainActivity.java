@@ -1,4 +1,4 @@
-package com.example.templeapp;
+package com.example.registration;
 
 import androidx.appcompat.app.AppCompatActivity;
 
@@ -21,10 +21,13 @@ public class MainActivity extends AppCompatActivity {
                 openAccount();
             }
         });
+
+
     }
     public void openAccount(){
-        Intent intent= new Intent(this, newAccount.class);
+        Intent intent= new Intent(this,Main2Activity_newAccount.class);
         startActivity(intent);
     }
-}
 
+
+}

@@ -25,7 +25,9 @@ public class MainActivity extends AppCompatActivity {
 
     }
     public void openAccount(){
+
         Intent intent= new Intent(this,Main2Activity_newAccount.class);
+        intent.setFlags(Intent.FLAG_ACTIVITY_NEW_TASK);
         startActivity(intent);
     }
 

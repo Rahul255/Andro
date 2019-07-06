@@ -9,6 +9,7 @@ import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
     private Button newAccount;
+    private Button newLogin;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -19,6 +20,14 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 openAccount();
+            }
+        });
+
+        newLogin=findViewById(R.id.login);
+        newLogin.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
             }
         });
 

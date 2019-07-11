@@ -8,8 +8,10 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TextView;
+import android.widget.Toast;
 
 public class RegisterActivity extends AppCompatActivity {
+    DatabaseHelper db;
     EditText mTextUsername;
     EditText mTextPassword;
     EditText mTextCnfPassword;
@@ -21,6 +23,7 @@ public class RegisterActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_register);
 
+        db = new DatabaseHelper(this);
         mTextUsername=findViewById(R.id.editTextUsername);
         mTextPassword=findViewById(R.id.editTextPassword);
         mTextCnfPassword=findViewById(R.id.editTextCnfPassword);
@@ -31,6 +34,31 @@ public class RegisterActivity extends AppCompatActivity {
             @Override
             public void onClick(View view) {
                 openActivity();
+            }
+        });
+
+        mButtonRegister.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                String user= mTextUsername.getText().toString().trim();
+                String pwd= mTextPassword.getText().toString().trim();
+                String cnf_pwd= mTextCnfPassword.getText().toString().trim();
+
+                if(pwd.equals(cnf_pwd)){
+                    long val = db.addUser(user,pwd);
+                    if(val > 0){
+                        Toast.makeText( RegisterActivity.this,"You have Registered",Toast.LENGTH_SHORT).show();
+                        Intent moveToLogin = new Intent(RegisterActivity.this,MainActivity.class);
+                        startActivity(moveToLogin);
+                    }
+                    else {
+                        Toast.makeText( RegisterActivity.this,"Registration Error",Toast.LENGTH_SHORT).show();
+                    }
+
+                }
+                else{
+                    Toast.makeText( RegisterActivity.this,"Password is not matching",Toast.LENGTH_SHORT).show();
+                }
             }
         });
     }

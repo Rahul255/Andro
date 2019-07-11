@@ -42,7 +42,8 @@ public class MainActivity extends AppCompatActivity {
                 String pwd = mTextPassword.getText().toString().trim();
                 Boolean res = db.checkUser(user,pwd);
                 if(res == true){
-                    Toast.makeText( MainActivity.this,"Successfully Logged In",Toast.LENGTH_SHORT).show();
+                    Intent LoginScreen = new Intent(MainActivity.this,HomeActivity.class);
+                    startActivity(LoginScreen);
                 }
                 else{
                     Toast.makeText( MainActivity.this,"Login Error",Toast.LENGTH_SHORT).show();

@@ -19,7 +19,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
 
     @Override
     public void onCreate(SQLiteDatabase sqLiteDatabase) {
-        sqLiteDatabase.execSQL("CREATE TABLE registeruser (ID INTERGER PRIMARY KEY AUTOINCREMENT, username TEXT, password TEXT)");
+        sqLiteDatabase.execSQL("CREATE TABLE registeruser (ID INTEGER PRIMARY KEY AUTOINCREMENT, username TEXT, password TEXT)");
 
     }
 
@@ -31,8 +31,8 @@ public class DatabaseHelper extends SQLiteOpenHelper {
     }
 
     public long addUser(String user,String password){
-        SQLiteDatabase db=this.getWritableDatabase();
-        ContentValues contentValues=new ContentValues();
+        SQLiteDatabase db = this.getWritableDatabase();
+        ContentValues contentValues = new ContentValues();
         contentValues.put("username",user);
         contentValues.put("password",password);
         long res = db.insert("registeruser",null,contentValues);
@@ -44,7 +44,7 @@ public class DatabaseHelper extends SQLiteOpenHelper {
         SQLiteDatabase db=this.getReadableDatabase();
         String selection = COL_2 + "=?" + "and" + COL_3 + "=?";
         String[] selectionArgs = {username, password };
-        Cursor cursor = db.query(TABLE_NAME,columns,selection,selectionArgs,null,null,null);
+        Cursor cursor = db.query(TABLE_NAME, columns, selection, selectionArgs, null, null, null);
         int count = cursor.getCount();
         cursor.close();
         db.close();
